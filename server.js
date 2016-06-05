@@ -1,13 +1,20 @@
-//
-// Request Header Parser - FreeCodeCamp Backend Project #2
+// # # # # # # # # # # # # # #
+// #  Request Header Parser  #
+// #    By: Nick Kasten      #
+// # # # # # # # # # # # # # #
 
-var express = require('express');
+var express = require('express')
 var app = express()
 var portNum = process.env.PORT || 3000
 
 app.get('/', function(req, res) {
-  res.sendfile('index.html')
+  //res.sendfile('index.html')
+  res.setHeader('Content-Type', 'application/json')
+  res.send(JSON.stringify({
+    'IP Address': req.headers['x-forwarded-for'],
+    'info': req.headers['user-agent'] 
+  }))  
 })
 .listen(portNum, function(){
-  console.log("Server listening at", portNum);
+  console.log("Listening on", portNum)
 });
