@@ -1,6 +1,6 @@
 {
   "name": "request-header-parser",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Shows information about the user in JSON format",
   "main": "server.js",
   "author": "Nick Kasten <kastencode@gmail.com>",
